@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:layout_collection/facebook.dart';
+import 'package:layout_collection/facebook_newsfeed.dart';
+import 'package:layout_collection/telegram.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,7 +13,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Facebook(),
+      home: MyHomePage(
+        title: 'lo-fi Flutter Layout Collection',
+      ),
     );
   }
 }
@@ -32,11 +35,27 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[],
-        ),
+      body: ListView(
+        children: <Widget>[
+          ListTile(
+            title: Text('[Lo-Fi] Facebook Newsfeed'),
+            onTap: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (BuildContext context) {
+                return FacebookNewsfeed();
+              }));
+            },
+          ),
+          ListTile(
+            title: Text('[Hi-Fi] Telegram Chat List'),
+            onTap: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (BuildContext context) {
+                return TelegramChatList();
+              }));
+            },
+          )
+        ],
       ),
     );
   }
