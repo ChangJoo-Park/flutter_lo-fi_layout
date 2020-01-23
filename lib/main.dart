@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:layout_collection/facebook_newsfeed.dart';
+import 'package:layout_collection/google_map.dart';
 import 'package:layout_collection/telegram.dart';
 import 'package:layout_collection/twitter_user.dart';
 
@@ -59,6 +60,15 @@ class _MyHomePageState extends State<MyHomePage> {
               Navigator.of(context)
                   .push(MaterialPageRoute(builder: (BuildContext context) {
                 return TwitterUser();
+              }));
+            },
+          ),
+          ListTile(
+            title: Text('[Lo-Fi] Google Map'),
+            onTap: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (BuildContext context) {
+                return GoogleMaps();
               }));
             },
           )
