@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:layout_collection/facebook_newsfeed.dart';
 import 'package:layout_collection/telegram.dart';
+import 'package:layout_collection/twitter_user.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,9 +11,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: MyHomePage(
         title: 'lo-fi Flutter Layout Collection',
       ),
@@ -52,6 +50,15 @@ class _MyHomePageState extends State<MyHomePage> {
               Navigator.of(context)
                   .push(MaterialPageRoute(builder: (BuildContext context) {
                 return TelegramChatList();
+              }));
+            },
+          ),
+          ListTile(
+            title: Text('[Lo-Fi] Twitter User'),
+            onTap: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (BuildContext context) {
+                return TwitterUser();
               }));
             },
           )
