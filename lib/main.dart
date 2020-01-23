@@ -3,6 +3,7 @@ import 'package:layout_collection/facebook_newsfeed.dart';
 import 'package:layout_collection/google_map.dart';
 import 'package:layout_collection/telegram.dart';
 import 'package:layout_collection/twitter_user.dart';
+import 'package:layout_collection/youtube_player.dart';
 
 void main() => runApp(MyApp());
 
@@ -69,6 +70,15 @@ class _MyHomePageState extends State<MyHomePage> {
               Navigator.of(context)
                   .push(MaterialPageRoute(builder: (BuildContext context) {
                 return GoogleMaps();
+              }));
+            },
+          ),
+          ListTile(
+            title: Text('[Lo-Fi] Youtube Player'),
+            onTap: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (BuildContext context) {
+                return YoutubePlayer();
               }));
             },
           )
