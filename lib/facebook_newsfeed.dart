@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-class Facebook extends StatelessWidget {
+class FacebookNewsfeed extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
@@ -23,7 +23,12 @@ class Facebook extends StatelessWidget {
                       SizedBox(
                         width: 32.0,
                         height: 32.0,
-                        child: Placeholder(color: Colors.white),
+                        child: GestureDetector(
+                            behavior: HitTestBehavior.opaque,
+                            onTap: () {
+                              Navigator.of(context).pop();
+                            },
+                            child: Placeholder(color: Colors.white)),
                       ),
                       SizedBox(width: 16.0),
                       SizedBox(
@@ -215,8 +220,73 @@ class Facebook extends StatelessWidget {
                         ),
                         Container(
                           color: Colors.white,
-                          child: Placeholder(),
-                        ),
+                          margin: const EdgeInsets.only(bottom: 16.0),
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                height: screenHeight / 12,
+                                padding: const EdgeInsets.all(8),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: <Widget>[
+                                    SizedBox(
+                                      width: 32.0,
+                                      height: 32.0,
+                                      child: Placeholder(),
+                                    ),
+                                    SizedBox(width: 8.0),
+                                    SizedBox(
+                                      width: 64.0,
+                                      height: 32.0,
+                                      child: Placeholder(),
+                                    ),
+                                    Spacer(),
+                                    SizedBox(
+                                      width: 32.0,
+                                      height: 32.0,
+                                      child: Placeholder(),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                padding: const EdgeInsets.all(8),
+                                height: screenHeight / 3,
+                                child: Placeholder(),
+                              ),
+                              Container(
+                                padding: const EdgeInsets.all(8),
+                                height: screenHeight / 12,
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: <Widget>[
+                                    Expanded(
+                                      child: Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            vertical: 8.0, horizontal: 16.0),
+                                        child: Placeholder(),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            vertical: 8.0, horizontal: 16.0),
+                                        child: Placeholder(),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            vertical: 8.0, horizontal: 16.0),
+                                        child: Placeholder(),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        )
                       ],
                     ),
                   ),
